@@ -28,4 +28,39 @@ nav h1{
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 50px;
+    margin-top: 80px;
+}
+.hero img{
+    width: 390px;
+}
+.hero h1{
+    text-align: center;
+    font-weight: 700;
+    font-size: 30px;
+    color: #4b4b4b;
+    line-height: 40px;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+}
+.hero button{
+    padding: 15px;
+    font-weight: bolder;
+    border-radius: 10px;
+    box-shadow: 0px 4px 0px 2px #58a700;
+    border: none;
+    outline: none;
+    display: block;
+    text-align: center;
+    width: 320px;
+    margin: 20px auto;
+    background-color: #58cc02;
+    color: white;
+    outline: 2px solid #58cc02;
+}
+.hero button:nth-child(3){
+    outline: 2px solid #e5e5e5;
+    box-shadow: 0px 4px 0px 1px #e5e5e5;
+    background-color: #ffffff;
+    color: #20b1f6;
 }
