@@ -29,3 +29,37 @@ h1.hero-heading{
     text-align: center;
     margin: 60px 0;
 }
+.langs{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 17px;
+    flex-wrap: wrap;
+}
+.langs .langBox{
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 215px;
+    border: 1px solid #e5e5e5;
+    border-width: 2px 2px 4px 2px;
+    gap: 7px;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: white;
+}
+.langs .langBox:hover{
+    filter: brightness(0.9);
+}
+.langs .langBox h2{
+    margin-top: 5px;
+    font-size: 17px;
+    color: rgb(75,75,75);
+}
+.langs .langBox p{
+    font-size: 17px;
+    color: rgb(119, 119, 119);
+}
