@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Varela Round", sans-serif;
+}
+header{
+    width: 100%;
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+nav i{
+    font-size: 24px;
+    color: #afafaf;
+}
+nav button{
+    padding: 14px;
+    border-radius: 15px;
+    border: 3px solid #ebebeb;
+    border-bottom: 4px solid #e5e5e5;
+    background-color: #fff;
+    color: #1cb0f6;
+    font-weight: bolder;
+    font-size: 14px;
+}
