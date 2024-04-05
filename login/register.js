@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
-import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-auth.js";
+import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-auth.js";
 import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-firestore.js";
 
 const firebaseConfig = {
@@ -39,3 +39,8 @@ function createUser() {
 }
 var signupBtn = document.getElementById("signup")
 signupBtn.addEventListener("click", createUser)
+onAuthStateChanged(auth, (user) => {
+    if (user) {
+      location.replace("./main/index.html")
+    }
+});

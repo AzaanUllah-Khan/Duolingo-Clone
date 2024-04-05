@@ -18,5 +18,4 @@ onAuthStateChanged(auth, (user) => {
     if (user) {
       location.replace("./main/index.html")
     }
-  });
-  
+});
