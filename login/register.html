@@ -18,20 +18,21 @@
 <body>
     <header>
         <nav>
-            <i class="fa fa-close"></i>
-            <button>LOGIN</button>
+            <i class="fa fa-close" onclick="location.replace('/')"></i>
+            <button onclick="location.replace('./login.html')">LOGIN</button>
         </nav>
     </header>
     <h1 class="heading">Create Your Profile</h1>
     <div class="form">
-        <input type="number" placeholder="Age">
+        <input type="number" placeholder="Age" id="age">
         <small>Providing your age ensures you get the right Duolingo experience. For more details, please visit our
             <b>Privacy Policy.</b></small>
-        <input type="text" placeholder="Name (Optional)">
-        <input type="email" placeholder="Email">
-        <input type="password" placeholder="Password">
-        <button>CREATE ACCOUNT</button>
+        <input type="text" placeholder="Name (Optional)" id="name">
+        <input type="email" placeholder="Email" id="email">
+        <input type="password" placeholder="Password" id="password">
+        <button id="signup">CREATE ACCOUNT</button>
     </div>
+    <script src="register.js" type="module"></script>
 </body>
 
 </html>

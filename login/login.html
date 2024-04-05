@@ -18,18 +18,20 @@
 <body>
     <header>
         <nav>
-            <i class="fa fa-close"></i>
-            <button>SIGN UP</button>
+            <i class="fa fa-close" onclick="location.replace('/')"></i>
+            <button onclick="location.replace('./register.html')">SIGN UP</button>
         </nav>
     </header>
     <h1 class="heading">Log In</h1>
     <div class="form">
-        <input type="email" placeholder="Email">
-        <input type="password" placeholder="Password">
-        <button>LOG IN</button>
+        <input type="email" placeholder="Email" id="email">
+        <input type="password" placeholder="Password" id="password">
+        <button id="login">LOG IN</button>
         <p class="f">By signing in to Duolingo, you agree to our <b>Terms</b> and <b>Privacy Policy.</b></p>
-        <p>This site is protected by reCAPTCHA Enterprise and the Google Privacy Policy and <b>Terms of Service apply.</b></p>
+        <p>This site is protected by reCAPTCHA Enterprise and the Google Privacy Policy and <b>Terms of Service
+                apply.</b></p>
     </div>
+    <script type="module" src="login.js"></script>
 </body>
 
 </html>

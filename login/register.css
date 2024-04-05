@@ -76,6 +76,7 @@ div.form{
     font-size: 14px;
     border-radius: 15px;
     box-shadow: 0px 4px 0px 0px #1899d6;
+    cursor: pointer;
 }
 .form p.f{
     margin-top: 40px;
