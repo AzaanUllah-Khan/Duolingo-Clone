@@ -31,6 +31,6 @@ var loginBtn = document.getElementById("login")
 loginBtn.addEventListener("click", signUser)
 onAuthStateChanged(auth, (user) => {
     if (user) {
-      location.replace("./main/index.html")
+      location.replace("../main/index.html")
     }
 });

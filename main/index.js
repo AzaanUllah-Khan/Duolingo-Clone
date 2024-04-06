@@ -16,8 +16,12 @@ const auth = getAuth(app);
 
 onAuthStateChanged(auth, (user) => {
     if (user) {
-    }else{
+    } else {
         location.replace("/")
     }
-  });
-  
+});
+var y = localStorage.getItem("imgY")
+document.getElementById("svg").viewBox.baseVal.x = "0"
+document.getElementById("svg").viewBox.baseVal.y = y
+document.getElementById("svg").viewBox.baseVal.width = "82"
+document.getElementById("svg").viewBox.baseVal.height = "66"

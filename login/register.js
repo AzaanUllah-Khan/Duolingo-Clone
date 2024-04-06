@@ -15,8 +15,10 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
+var dataSent = true
 
 function createUser() {
+    dataSent = false
     var email = document.getElementById("email").value
     var password = document.getElementById("password").value
     var name = document.getElementById("name").value
@@ -29,6 +31,7 @@ function createUser() {
                 language: localStorage.getItem("language"),
                 age,
             }).then(() => {
+                dataSent = true
                 location.replace("../main/index.html")
             })
         })
@@ -41,6 +44,8 @@ var signupBtn = document.getElementById("signup")
 signupBtn.addEventListener("click", createUser)
 onAuthStateChanged(auth, (user) => {
     if (user) {
-      location.replace("./main/index.html")
+        if(dataSent){
+            location.replace("../main/index.html")
+        }
     }
 });
