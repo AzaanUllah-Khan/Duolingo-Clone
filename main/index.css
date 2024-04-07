@@ -92,6 +92,8 @@ aside .block .more ul li{
     cursor: pointer;
     color: #787878;
     font-weight: bolder;
+    text-transform: uppercase;
+    font-size: 14px;
 }
 aside .block .more ul li:nth-child(3),aside .block .more ul li:nth-child(4),aside .block .more ul li:nth-child(5){
     padding: 12px 15px;

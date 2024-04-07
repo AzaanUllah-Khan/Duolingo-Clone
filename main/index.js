@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
-import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-auth.js";
+import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-auth.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyCIrlFqcZrbpluUnBZ1bL6_8SsiwBmISi4",
@@ -21,6 +21,11 @@ onAuthStateChanged(auth, (user) => {
     }
 });
 var y = localStorage.getItem("imgY")
+document.getElementById("signout").addEventListener("click",()=>{
+    signOut(auth).then(() => {
+      }).catch((error) => {
+      });
+})
 document.getElementById("svg").viewBox.baseVal.x = "0"
 document.getElementById("svg").viewBox.baseVal.y = y
 document.getElementById("svg").viewBox.baseVal.width = "82"
