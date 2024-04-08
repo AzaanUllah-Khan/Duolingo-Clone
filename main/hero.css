@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Varela Round", sans-serif;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+.wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+}
+img{
+    width: 50%;
+    border-radius: 15px;
+    border: 2px solid #e5e5e5;
+}
+button{
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: bolder;
+    border: 2px solid #84d8ff;
+    border-radius: 15px;
+    background-color: #ddf4ff;
+    color: #84d8ff;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    outline: none;
+    cursor: pointer;
+}
+button img{
+    width: 35px;
+    border: none;
+}
