@@ -18,19 +18,19 @@ body{
     gap: 30px;
 }
 img{
-    width: 50%;
+    width: 60%;
     border-radius: 15px;
     border: 2px solid #e5e5e5;
 }
 button{
-    font-size: 18px;
+    font-size: 14px;
     text-transform: uppercase;
     font-weight: bolder;
     border: 2px solid #84d8ff;
     border-radius: 15px;
     background-color: #ddf4ff;
     color: #1cb0f6;
-    padding: 15px;
+    padding: 10px 20px;
     display: flex;
     align-items: center;
     gap: 13px;
@@ -39,6 +39,6 @@ button{
     font-weight: bolder;
 }
 button img{
-    width: 35px;
+    width: 30px;
     border: none;
 }
