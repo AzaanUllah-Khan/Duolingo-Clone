@@ -120,7 +120,7 @@ main header{
     padding: 0 10px;
     display: flex;
     align-items: center;
-    outline: 2px solid #e5e5e5;
+    border-bottom: 2px solid #e5e5e5;
 }
 main header nav{
     width: 100%;
