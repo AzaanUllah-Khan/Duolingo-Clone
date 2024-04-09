@@ -11,7 +11,7 @@ body{
     overflow: hidden;
 }
 aside{
-    width: 280px;
+    width: 310px;
     padding: 30px 17px;
     display: flex;
     flex-direction: column;
@@ -57,7 +57,7 @@ aside .blocks .block h1{
     color: #777777;
 }
 aside .blocks .block.active{
-    border: 2px solid #84d8ff;
+    outline: 2px solid #84d8ff;
     border-radius: 15px;
     background-color: #ddf4ff;
 }

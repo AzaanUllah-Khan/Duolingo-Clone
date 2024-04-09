@@ -14,7 +14,7 @@
     <aside>
         <img src="https://d35aaqx5ub95lt.cloudfront.net/vendor/70a4be81077a8037698067f583816ff9.svg" alt="">
         <div class="blocks">
-            <div class="block active">
+            <div class="block" id="days" onclick="switchActive('days')">
                 <img src="https://d35aaqx5ub95lt.cloudfront.net/vendor/784035717e2ff1d448c0f6cc4efc89fb.svg" alt="">
                 <h1>Days Of Week</h1>
             </div>
@@ -22,19 +22,19 @@
                 <img src="https://d35aaqx5ub95lt.cloudfront.net/vendor/5187f6694476a769d4a4e28149867e3e.svg" alt="">
                 <h1>Daily Conversation</h1>
             </div>
-            <div class="block">
+            <div class="block" id="family" onclick="switchActive('family')">
                 <img src="https://d35aaqx5ub95lt.cloudfront.net/vendor/ca9178510134b4b0893dbac30b6670aa.svg" alt="">
                 <h1>Family Members</h1>
             </div>
-            <div class="block">
+            <div class="block" id="greetings" onclick="switchActive('greetings')">
                 <img src="https://d35aaqx5ub95lt.cloudfront.net/vendor/7ef36bae3f9d68fc763d3451b5167836.svg" alt="">
                 <h1>Greatings By Time</h1>
             </div>
-            <div class="block">
+            <div class="block" id="converter" onclick="switchActive('converter')">
                 <img src="https://d35aaqx5ub95lt.cloudfront.net/vendor/0e58a94dda219766d98c7796b910beee.svg" alt="">
                 <h1>Language Converter</h1>
             </div>
-            <div class="block">
+            <div class="block" id="profile" onclick="switchActive('profile')">
                 <img src="https://simg-ssl.duolingo.com/avatars/1187004080/KblUbJ-gFm/medium" alt="" style="border-radius: 50%;">
                 <h1>Profile</h1>
             </div>
@@ -67,7 +67,7 @@
             </nav>
         </header>
         <div class="main">
-            <iframe src="./iframes/greetings.html" frameborder="0"></iframe>
+            <iframe src="./iframes/hero.html" frameborder="0" id="iframe"></iframe>
         </div>
     </main>
     <script type="module" src="./index.js"></script>
