@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Varela Round", sans-serif;
+}
+body{
+    padding: 20px 20px 10px 20px;
+}
+h1.main-heading{
+    font-size: 20px;
+    letter-spacing: 0.8px;
+    color: #afafaf;
+}
+.boxes{
+    height: 90vh;
+    padding: 10px 15px 15px 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.box{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: flex-start;
+    gap: 5px;
+}
+.box h1{
+    background-color: #58cc02;
+    color: white;
+    text-transform: uppercase;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: bolder;
+}
+.box h2{
+    font-size: 35px;
+}
