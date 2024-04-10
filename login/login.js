@@ -1,5 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
-import { getAuth, signInWithEmailAndPassword,onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-auth.js";
+import { getAuth, signInWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-auth.js";
+import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-firestore.js";
 
 const Toast = Swal.mixin({
     toast: true,
@@ -25,6 +26,8 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
+const db = getFirestore(app);
+
 var dataSent = true
 
 function signUser() {
@@ -38,8 +41,30 @@ function signUser() {
             Toast.fire({
                 icon: 'success',
                 text: 'LoggedIn successfully'
-              }).then(()=>{
-                  location.replace("../main/index.html")
+            }).then(async () => {
+                if (user) {
+                    const docRef = doc(db, "Users", user.uid);
+                    const docSnap = await getDoc(docRef);
+
+                    if (docSnap.exists()) {
+                        console.log("Document data:", docSnap.data());
+                        if (docSnap.data().language == "Japanese") {
+                            localStorage.setItem("language", "Japanese")
+                            localStorage.setItem("imgY", 264)
+                        } else if (docSnap.data().language == "Korean") {
+                            localStorage.setItem("language", "Korean")
+                            localStorage.setItem("imgY", 396)
+                        }
+                        else if (docSnap.data().language == "Spanish") {
+                            localStorage.setItem("language", "Spanish")
+                            localStorage.setItem("imgY", 66)
+                        }
+                        else if (docSnap.data().language == "French") {
+                            localStorage.setItem("language", "French")
+                            localStorage.setItem("imgY", 132)
+                        }
+                    }
+                }
             })
         })
         .catch((error) => {
@@ -50,26 +75,26 @@ function signUser() {
                     icon: 'error',
                     title: "Invalid Email"
                 })
-			}
-			else if (errorMessage === "Firebase: Error (auth/missing-password).") {
+            }
+            else if (errorMessage === "Firebase: Error (auth/missing-password).") {
                 Toast.fire({
                     icon: 'error',
                     text: 'Password Should Be Entered'
                 })
-			}
-			else if (errorMessage === "Firebase: Error (auth/invalid-credential).") {
+            }
+            else if (errorMessage === "Firebase: Error (auth/invalid-credential).") {
                 Toast.fire({
                     icon: 'error',
                     text: 'Invalid Email or Passwords'
                 })
-			}
+            }
         });
 }
 var loginBtn = document.getElementById("login")
 loginBtn.addEventListener("click", signUser)
 onAuthStateChanged(auth, (user) => {
     if (user) {
-        if(dataSent){
+        if (dataSent) {
             location.replace("../main/index.html")
         }
     }

@@ -15,10 +15,11 @@ h1.main-heading{
 }
 .container {
     padding: 35px 15px 15px;
-    width: 90%;
+    width: 80%;
     background: #fff;
     border-radius: 7px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.01);
+    margin: 0 auto;
 }
 
 .wrapper {
