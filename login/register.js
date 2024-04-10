@@ -2,6 +2,18 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.10.0/fireba
 import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-auth.js";
 import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-firestore.js";
 
+const Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+        toast.addEventListener('mouseenter', Swal.stopTimer)
+        toast.addEventListener('mouseleave', Swal.resumeTimer)
+    }
+})
+
 const firebaseConfig = {
     apiKey: "AIzaSyCIrlFqcZrbpluUnBZ1bL6_8SsiwBmISi4",
     authDomain: "doulingo-clone.firebaseapp.com",
@@ -32,12 +44,37 @@ function createUser() {
                 age,
             }).then(() => {
                 dataSent = true
-                location.replace("../main/index.html")
+                Toast.fire({
+                    icon: 'success',
+                    text: 'User created successfully'
+                  }).then(()=>{
+                      location.replace("../main/index.html")
+                    })
             })
         })
         .catch((error) => {
-            const errorCode = error.code;
             const errorMessage = error.message;
+			if (errorMessage === "Firebase: Error (auth/invalid-email).") {
+                Toast.fire({
+                    icon: 'error',
+                    title: "Invalid Email"
+                })
+			}
+			else if (errorMessage === "Firebase: Password should be at least 6 characters (auth/weak-password).") {
+                Toast.fire({
+                    icon: 'error',
+                    text: 'Password Should Be atleast 6 characters'
+                })
+			}
+			else if (errorMessage === "Firebase: Error (auth/email-already-in-use).") {
+                Toast.fire({
+                    icon: 'error',
+                    text: 'Email is already taken'
+                })
+			}
+			else {
+				console.log(errorMessage);
+			}
         });
 }
 var signupBtn = document.getElementById("signup")
