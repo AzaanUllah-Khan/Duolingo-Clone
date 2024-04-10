@@ -22,6 +22,9 @@ onAuthStateChanged(auth, async(user) => {
 
         if (docSnap.exists()) {
             console.log("Document data:", docSnap.data());
+            document.getElementById("name").innerHTML = docSnap.data().name
+            document.getElementById("nick").innerHTML = (docSnap.data().name).split(" ")[0]+"1"
+            document.getElementById("join").innerHTML = `Joined ${docSnap.data().month} ${docSnap.data().year}`
         } else {
             console.log("No such document!");
         }
