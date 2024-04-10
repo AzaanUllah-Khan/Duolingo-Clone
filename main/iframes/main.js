@@ -2,6 +2,7 @@ var box = document.getElementsByClassName("box");
 var english;
 function translate(number){
     english = (box[number].firstElementChild.innerHTML).toLocaleLowerCase();
+    box[number].firstElementChild.nextElementSibling.innerHTML = "Translating..."
     let apiUrl = `https://api.mymemory.translated.net/get?q=${english}&langpair=en|${localStorage.getItem("language")}`;
     fetch(apiUrl)
     .then(res => res.json())
