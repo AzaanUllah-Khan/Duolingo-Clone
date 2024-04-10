@@ -51,7 +51,7 @@ body {
 }
 
 .text-input textarea::placeholder {
-    color: #b7b6b6;
+    color: #58cc02;
 }
 
 .controls,
@@ -74,7 +74,7 @@ li,
 
 .controls .row .icons i {
     width: 50px;
-    color: #adadad;
+    color: #58a700;
     font-size: 14px;
     cursor: pointer;
     transition: transform 0.2s ease;
@@ -92,7 +92,7 @@ li,
 }
 
 .controls .row select {
-    color: #333;
+    color: #58a700;
     border: none;
     outline: none;
     font-size: 18px;
@@ -125,7 +125,7 @@ li,
 }
 
 .controls .exchange {
-    color: #adadad;
+    color: #58a700;
     cursor: pointer;
     font-size: 16px;
     transition: transform 0.2s ease;
