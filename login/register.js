@@ -35,6 +35,9 @@ function createUser() {
     var password = document.getElementById("password").value
     var name = document.getElementById("name").value
     var age = document.getElementById("age").value
+    var months = ["January","February","March","April","May","June","July","August","September","October","November","December"]
+    var month = months[new Date().getMonth()]
+    var year = new Date().getFullYear()
     createUserWithEmailAndPassword(auth, email, password)
         .then(async (userCredential) => {
             const user = userCredential.user;
@@ -42,6 +45,8 @@ function createUser() {
                 name,
                 language: localStorage.getItem("language"),
                 age,
+                month,
+                year
             }).then(() => {
                 dataSent = true
                 Toast.fire({
