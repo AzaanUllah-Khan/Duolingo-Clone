@@ -21,7 +21,6 @@ onAuthStateChanged(auth, async(user) => {
         const docSnap = await getDoc(docRef);
 
         if (docSnap.exists()) {
-            console.log("Document data:", docSnap.data());
             document.getElementById("name").innerHTML = docSnap.data().name
             document.getElementById("nick").innerHTML = (docSnap.data().name).split(" ")[0]+"1"
             document.getElementById("join").innerHTML = `Joined ${docSnap.data().month} ${docSnap.data().year}`
@@ -36,3 +35,15 @@ document.getElementById("svg").viewBox.baseVal.x = "0"
 document.getElementById("svg").viewBox.baseVal.y = y
 document.getElementById("svg").viewBox.baseVal.width = "82"
 document.getElementById("svg").viewBox.baseVal.height = "66"
+
+document.getElementById("f").addEventListener("click",()=>{
+    document.getElementById("f").classList.add("active")
+    document.getElementById("fi").classList.remove("active")
+    document.getElementById("ma").innerHTML = `<img src="https://d35aaqx5ub95lt.cloudfront.net/images/profile/a925a18c6be921a81bf0e13102983168.svg" alt="">
+    <p>Learning is more fun and effective when you connect with others.</p>`
+})
+document.getElementById("fi").addEventListener("click",()=>{
+    document.getElementById("fi").classList.add("active")
+    document.getElementById("f").classList.remove("active")
+    document.getElementById("ma").innerHTML = `<h1>No Followers Yet</h1>`
+})
