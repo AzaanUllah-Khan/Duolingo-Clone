@@ -4,3 +4,115 @@
     box-sizing: border-box;
     font-family: "Varela Round", sans-serif;
 }
+body{
+    padding: 30px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.wrapper{
+    width: 55%;
+}
+.profile{
+    background-color: #ddf4ff;
+    width: 100%;
+    height: 260px;
+    border-radius: 15px;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+.profile img{
+    margin-bottom: -70px;
+    cursor: pointer;
+}
+.profile i{
+    cursor: pointer;
+    font-size: 25px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #4b4b4b;
+}
+.name{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.name h1{
+    font-size: 28px;
+    color: #3c3c3c;
+}
+.name span{
+    margin-top: 3px;
+    color: #afafaf;
+    font-size: 17px;
+}
+.name p{
+    margin-top: 10px;
+    color: #777;
+    font-size: 18px;
+}
+.name .bottom{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 15px;
+}
+.name .bottom .follow-ers{
+    display: flex;
+    gap: 12px;
+}
+.name .bottom .follow-ers h1{
+    color: #1cb0f6;
+    font-size: 16px;
+    font-weight: bolder;
+}
+.name .bottom svg{
+    width: 35px;
+}
+.followings-er{
+    width: 42%;
+    border-radius: 15px;
+    border: 2px solid #e5e5e5;
+}
+.followings-er .header{
+    width: 100%;
+    display: flex;
+}
+.followings-er .header h1{
+    padding: 15px;
+    width: 50%;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bolder;
+    border-bottom: 2px solid #e5e5e5;
+    cursor: pointer;
+}
+.followings-er .header h1:hover{
+    color: #1cb0f6;
+    border-bottom-color: #1cb0f6;
+}
+.followings-er .main-area{
+    width: 100%;
+    padding: 15px;
+}
+.followings-er .main-area img{
+    width: 90%;
+    margin: 15px auto;
+    display: block;
+}
+.followings-er .main-area p{
+    font-size: 17px;
+    margin-top: 20px;
+    text-align: center;
+    color: #777;
+}
+.followings-er h1.active{
+    color: #1cb0f6;
+    border-bottom-color: #1cb0f6;
+}
