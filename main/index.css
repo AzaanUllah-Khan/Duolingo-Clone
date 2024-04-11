@@ -48,6 +48,7 @@ aside img{
 }
 aside .blocks .block img{
     width: 35px;
+    height: 35px;
     margin-left: 0;
 }
 aside .blocks .block h1{

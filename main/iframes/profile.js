@@ -13,6 +13,18 @@ const firebaseConfig = {
     measurementId: "G-WC71VL2GVL"
 };
 
+const Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+        toast.addEventListener('mouseenter', Swal.stopTimer)
+        toast.addEventListener('mouseleave', Swal.resumeTimer)
+    }
+})
+
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
@@ -57,6 +69,13 @@ function uploadPics() {
 
     uploadBytes(storageRef, file).then(() => {
         console.log('Uploaded a blob or file!');
-    });
+    }).then(()=>{
+        Toast.fire({
+            icon: 'success',
+            text: 'Avatar Updated Successfully'
+          }).then(()=>{
+                window.top.location.reload();
+            })
+    })
 }
 document.getElementById("file").addEventListener("change",uploadPics)
