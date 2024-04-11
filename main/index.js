@@ -1,5 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
 import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-auth.js";
+import { getStorage, ref,getDownloadURL } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-storage.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyCIrlFqcZrbpluUnBZ1bL6_8SsiwBmISi4",
@@ -13,9 +14,14 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
+const storage = getStorage();
 
 onAuthStateChanged(auth, (user) => {
     if (user) {
+        getDownloadURL(ref(storage, user.email))
+                .then((url) => {
+                    document.getElementById("img").src = url
+                })
     } else {
         location.replace("/")
     }
