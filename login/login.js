@@ -65,6 +65,8 @@ function signUser() {
                         }
                     }
                 }
+            }).then(()=>{
+                location.replace("../main/index.html")
             })
         })
         .catch((error) => {
