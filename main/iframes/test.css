@@ -70,3 +70,47 @@
     background-color: #e5e5e5;
     box-shadow: none;
 }
+.test{
+    padding: 10px;
+    width: 100%;
+}
+.test .wrapper{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.question {
+    position: relative;
+    background-color: white;
+    outline: 2px solid #e5e5e5;
+    padding: 10px 15px;
+    width: 180px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: -40px;
+    margin-top: -30px;
+}
+
+.question::before {
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid #e5e5e5; /* Change the color to match your design */
+}
+.test .wrapper .question i{
+    color: #1cb0f6;
+    font-size: 20px;
+    cursor: pointer;
+}
+.test .wrapper .question p{
+    color: #4b4b4b;
+    font-size: 20px;
+}
