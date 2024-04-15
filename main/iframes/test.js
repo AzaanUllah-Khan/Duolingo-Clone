@@ -1,3 +1,5 @@
+document.getElementById("lang").innerHTML = localStorage.getItem("language")
+
 var option = document.getElementsByTagName("p")
 for (i = 0; i < option.length; i++) {
     option[i].addEventListener("click", (event) => { buttonClick(event.target) })
