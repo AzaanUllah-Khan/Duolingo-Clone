@@ -16,7 +16,7 @@
 
 <body>
     <div class="top">
-        <i class="fa fa-close" style="color: #afafaf; font-size: 25px;"></i>
+        <i class="fa fa-close" style="color: #afafaf; font-size: 25px; cursor: pointer;" onclick="history.back()"></i>
         <div class="loader"></div>
         <div class="hearts">
             <i class="fa-solid fa-heart" style="color: #ff4b4b;"></i>
@@ -476,6 +476,17 @@
     <div class="bottom">
         <button id="skip">SKIP</button>
         <button disabled id="checkBtn">CHECK</button>
+    </div>
+    <div class="result wrong" id="res">
+        <div class="first">
+            <i class="fa fa-close" id="status"></i>
+            <div class="res">
+                <span>Nicely Done. Meaning:</span>
+                <span id="ans">Monday</span>
+                <b><i class="fa-regular fa-flag"></i>REPORT</b>
+            </div>
+        </div>
+        <button id="increaseQ">CONTINUE</button>
     </div>
     <script src="test.js"></script>
 </body>

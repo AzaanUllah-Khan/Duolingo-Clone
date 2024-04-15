@@ -1,5 +1,5 @@
 document.getElementById("lang").innerHTML = localStorage.getItem("language")
-localStorage.setItem("lifelines", 5)
+localStorage.setItem("lifelines", 3)
 var q = 0
 var questionsAnswers = [
     {
@@ -41,6 +41,7 @@ var questionsAnswers = [
 ]
 var option = document.getElementsByTagName("p")
 function setQ() {
+    document.getElementById("res").style.display = "none"
     document.getElementById("ll").innerHTML = localStorage.getItem("lifelines");
     document.getElementById("checkBtn").disabled = true;
     document.getElementById("question").innerHTML = questionsAnswers[q].question;
@@ -66,15 +67,27 @@ function buttonClick(btn) {
     btn.classList.add("active")
     document.getElementById("checkBtn").disabled = false
 }
-function increaseQ() {
+function check() {
+    document.getElementById("res").style.display = "flex"
     var btn = document.getElementsByClassName("active")[0]
     if(btn.id == questionsAnswers[q].correctOpt){
-        alert("A")
+        document.getElementById("res").className = "result correct"
+        document.getElementById("status").className = "fa fa-check"
+        document.getElementById("ans").innerHTML = document.getElementById("ans").innerHTML = questionsAnswers[q]["option" + questionsAnswers[q].correctOpt];
+        document.getElementById("ans").previousElementSibling.innerHTML = "Nicely Done. Meaning:"
+    }else{
+        document.getElementById("res").className = "result wrong"
+        document.getElementById("status").className = "fa fa-close"
+        document.getElementById("ans").previousElementSibling.innerHTML = "Wrong Answer. Correct Solution:"
+        document.getElementById("ans").innerHTML = document.getElementById("ans").innerHTML = questionsAnswers[q]["option" + questionsAnswers[q].correctOpt] + " " + "( Option"+questionsAnswers[q].correctOpt+" )";
     }
+}
+function increaseQ(){
     q++
     setQ()
 }
-document.getElementById("checkBtn").addEventListener("click", increaseQ)
+document.getElementById("increaseQ").addEventListener("click", increaseQ)
+document.getElementById("checkBtn").addEventListener("click", check)
 document.getElementById("skip").addEventListener("click", skip)
 function skip() {
     ll = Number(localStorage.getItem("lifelines"))
