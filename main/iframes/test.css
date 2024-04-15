@@ -26,7 +26,7 @@
 .top .hearts i{
     font-size: 18px;
 }
-.top .hearts p{
+.top .hearts span{
     font-size: 18px;
     color: #ff4b4b;
 }
@@ -110,7 +110,7 @@
     font-size: 20px;
     cursor: pointer;
 }
-.test .wrapper .question p{
+.test .wrapper .question span{
     color: #4b4b4b;
     font-size: 23px;
 }
