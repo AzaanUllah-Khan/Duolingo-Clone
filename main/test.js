@@ -47,7 +47,7 @@ function setQ() {
     document.getElementById("question").innerHTML = questionsAnswers[q].question;
     for (let i = 0; i < option.length; i++) {
         option[i].classList.remove("active");
-        option[i].id = i+1
+        option[i].id = i + 1
         let apiUrl = `https://api.mymemory.translated.net/get?q=${questionsAnswers[q][`option${i + 1}`]}&langpair=en|${localStorage.getItem("language")}`;
         fetch(apiUrl)
             .then(res => res.json())
@@ -70,19 +70,21 @@ function buttonClick(btn) {
 function check() {
     document.getElementById("res").style.display = "flex"
     var btn = document.getElementsByClassName("active")[0]
-    if(btn.id == questionsAnswers[q].correctOpt){
+    if (btn.id == questionsAnswers[q].correctOpt) {
         document.getElementById("res").className = "result correct"
         document.getElementById("status").className = "fa fa-check"
         document.getElementById("ans").innerHTML = document.getElementById("ans").innerHTML = questionsAnswers[q]["option" + questionsAnswers[q].correctOpt];
         document.getElementById("ans").previousElementSibling.innerHTML = "Nicely Done. Meaning:"
-    }else{
+        addPopEffect("status");
+    } else {
         document.getElementById("res").className = "result wrong"
         document.getElementById("status").className = "fa fa-close"
         document.getElementById("ans").previousElementSibling.innerHTML = "Wrong Answer. Correct Solution:"
-        document.getElementById("ans").innerHTML = document.getElementById("ans").innerHTML = questionsAnswers[q]["option" + questionsAnswers[q].correctOpt] + " " + "( Option"+questionsAnswers[q].correctOpt+" )";
+        document.getElementById("ans").innerHTML = document.getElementById("ans").innerHTML = questionsAnswers[q]["option" + questionsAnswers[q].correctOpt] + " " + "( Option" + questionsAnswers[q].correctOpt + " )";
+        addPopEffect("status");
     }
 }
-function increaseQ(){
+function increaseQ() {
     q++
     setQ()
 }
@@ -98,3 +100,9 @@ function skip() {
     }
 }
 setQ()
+function addPopEffect(element) {
+    document.getElementById(element).classList.add('pop');
+    setTimeout(() => {
+        document.getElementById(element).classList.remove('pop');
+    }, 300);
+}
