@@ -8,4 +8,5 @@ function buttonClick(btn) {
     }
     var btnTxt = btn.innerHTML
     btn.classList.add("active")
+    document.getElementById("checkBtn").disabled = false
 }
