@@ -14,7 +14,7 @@ var questionsAnswers = [
         option1:"Hello",
         option2:"What time is it ?",
         option3:"How are you ?",
-        option4:"What is you name ?",
+        option4:"What is your name ?",
         correctOpt:"3"
     },{
         question:"Father",
@@ -39,14 +39,16 @@ var questionsAnswers = [
         correctOpt:"1"
     }
 ]
-function setQ(){
-    document.getElementById("ll").innerHTML = localStorage.getItem("lifelines")
-    document.getElementById("checkBtn").disabled = true
-    document.getElementById("question").innerHTML = questionsAnswers[q].question
+function setQ() {
+    document.getElementById("ll").innerHTML = localStorage.getItem("lifelines");
+    document.getElementById("checkBtn").disabled = true;
+    document.getElementById("question").innerHTML = questionsAnswers[q].question;
     for (i = 0; i < option.length; i++) {
-        option[i].classList.remove("active")
+        option[i].classList.remove("active");
+        option[i].innerHTML = questionsAnswers[q][`option${i+1}`];
     }
 }
+
 var option = document.getElementsByTagName("p")
 for (i = 0; i < option.length; i++) {
     option[i].addEventListener("click", (event) => { buttonClick(event.target) })
