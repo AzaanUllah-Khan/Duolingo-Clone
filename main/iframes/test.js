@@ -1,4 +1,5 @@
 document.getElementById("lang").innerHTML = localStorage.getItem("language")
+localStorage.setItem("lifelines",5)
 var q = 0
 var questionsAnswers = [
     {
@@ -39,6 +40,7 @@ var questionsAnswers = [
     }
 ]
 function setQ(){
+    document.getElementById("ll").innerHTML = localStorage.getItem("lifelines")
     document.getElementById("checkBtn").disabled = true
     document.getElementById("question").innerHTML = questionsAnswers[q].question
     for (i = 0; i < option.length; i++) {
@@ -57,8 +59,17 @@ function buttonClick(btn) {
     document.getElementById("checkBtn").disabled = false
 }
 document.getElementById("checkBtn").addEventListener("click",increaseQ)
+document.getElementById("skip").addEventListener("click",skip)
 function increaseQ(){
     q++
     setQ()
+}
+function skip(){
+    ll = Number(localStorage.getItem("lifelines"))
+    if(ll>=2){
+        q++
+        localStorage.setItem("lifelines",ll-1)
+        setQ()
+    }
 }
 setQ()
