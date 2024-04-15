@@ -83,8 +83,8 @@
     position: relative;
     background-color: white;
     outline: 2px solid #e5e5e5;
-    padding: 10px 15px;
-    width: 180px;
+    padding: 10px 30px 10px 15px;
+    width: fit-content;
     border-radius: 10px;
     display: flex;
     align-items: center;
