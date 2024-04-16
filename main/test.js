@@ -40,7 +40,12 @@ var questionsAnswers = [
     }
 ]
 var option = document.getElementsByTagName("p")
+const loader = document.querySelector('.top .loader');
+
 function setQ() {
+    loader.style.setProperty('--width', `${q / 5 * 100}%`);
+    const afterWidth = parseFloat(getComputedStyle(loader).getPropertyValue('--width'));
+    loader.style.setProperty('--before-width', `${afterWidth - 1}%`);
     document.getElementById("res").style.display = "none"
     document.getElementById("ll").innerHTML = localStorage.getItem("lifelines");
     document.getElementById("checkBtn").disabled = true;

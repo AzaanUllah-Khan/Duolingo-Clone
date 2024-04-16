@@ -16,8 +16,32 @@
 .top .loader{
     width: 100%;
     background-color: #e5e5e5;
-    padding: 7px;
+    padding: 8px;
     border-radius: 30px;
+    position: relative;
+}
+.top .loader::after {
+    content: "";
+    height: 100%;
+    background-color: #58cc02;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 30px;
+    width: var(--width);
+    transition: .69s ease-in-out;
+}
+.top .loader::before {
+    content: "";
+    height: 40%;
+    background-color: #78d635bd;
+    position: absolute;
+    top: 4px;
+    left: 5px;
+    border-radius: 30px;
+    width: var(--before-width);
+    transition: .69s ease-in-out;
+    z-index: 100;
 }
 .top .hearts{
     display: flex;
