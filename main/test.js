@@ -43,24 +43,35 @@ var option = document.getElementsByTagName("p")
 const loader = document.querySelector('.top .loader');
 
 function setQ() {
-    loader.style.setProperty('--width', `${q / 5 * 100}%`);
-    const afterWidth = parseFloat(getComputedStyle(loader).getPropertyValue('--width'));
-    loader.style.setProperty('--before-width', `${afterWidth - 1}%`);
-    document.getElementById("res").style.display = "none"
-    document.getElementById("ll").innerHTML = localStorage.getItem("lifelines");
-    document.getElementById("checkBtn").disabled = true;
-    document.getElementById("question").innerHTML = questionsAnswers[q].question;
-    for (let i = 0; i < option.length; i++) {
-        option[i].classList.remove("active");
-        option[i].id = i + 1
-        let apiUrl = `https://api.mymemory.translated.net/get?q=${questionsAnswers[q][`option${i + 1}`]}&langpair=en|${localStorage.getItem("language")}`;
-        fetch(apiUrl)
-            .then(res => res.json())
-            .then(data => {
-                option[i].innerHTML = data.responseData.translatedText
-            });
+    try {
+        loader.style.setProperty('--width', `${q / 5 * 100}%`);
+        const afterWidth = parseFloat(getComputedStyle(loader).getPropertyValue('--width'));
+        loader.style.setProperty('--before-width', `${afterWidth - 1}%`);
+        document.getElementById("res").style.display = "none"
+        document.getElementById("ll").innerHTML = localStorage.getItem("lifelines");
+        document.getElementById("checkBtn").disabled = true;
+        document.getElementById("question").innerHTML = questionsAnswers[q].question;
+        for (let i = 0; i < option.length; i++) {
+            option[i].classList.remove("active");
+            option[i].id = i + 1
+            let apiUrl = `https://api.mymemory.translated.net/get?q=${questionsAnswers[q][`option${i + 1}`]}&langpair=en|${localStorage.getItem("language")}`;
+            fetch(apiUrl)
+                .then(res => res.json())
+                .then(data => {
+                    option[i].innerHTML = data.responseData.translatedText
+                });
+        }
+    }
+    catch (error) {
+        document.getElementById("checkBtn").disabled = false
+        document.getElementById("checkBtn").innerHTML = ""
+        document.getElementById("checkBtn").classList.add("loaddd")
+        setTimeout(() => {
+            window.location.replace("./result.html")
+        }, 1500);
     }
 }
+
 
 for (i = 0; i < option.length; i++) {
     option[i].addEventListener("click", (event) => { buttonClick(event.target) })

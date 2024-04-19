@@ -1,11 +1,11 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Varela Round", sans-serif;
 }
 
-.top{
+.top {
     width: 100%;
     padding: 40px 60px 20px;
     display: flex;
@@ -13,13 +13,15 @@
     justify-content: space-between;
     gap: 20px;
 }
-.top .loader{
+
+.top .loader {
     width: 100%;
     background-color: #e5e5e5;
     padding: 8px;
     border-radius: 30px;
     position: relative;
 }
+
 .top .loader::after {
     content: "";
     height: 100%;
@@ -31,6 +33,7 @@
     width: var(--width);
     transition: .69s ease-in-out;
 }
+
 .top .loader::before {
     content: "";
     height: 40%;
@@ -43,27 +46,33 @@
     transition: .69s ease-in-out;
     z-index: 100;
 }
-.top .hearts{
+
+.top .hearts {
     display: flex;
     align-items: center;
     gap: 5px;
 }
-.top .hearts i{
+
+.top .hearts i {
     font-size: 24px;
 }
-.top .hearts span{
+
+.top .hearts span {
     font-size: 22px;
     color: #ff4b4b;
 }
-.middle{
+
+.middle {
     padding: 10px 150px;
 }
-.middle h1{
+
+.middle h1 {
     color: #3c3c3c;
     font-size: 25px;
     font-weight: bolder;
 }
-.bottom{
+
+.bottom {
     padding: 40px 60px 0;
     display: flex;
     align-items: center;
@@ -71,7 +80,9 @@
     border-top: 2px solid #e5e5e5;
     width: 100%;
 }
-.bottom button{
+
+.bottom button {
+    position: relative;
     padding: 15px;
     font-weight: bolder;
     border-radius: 15px;
@@ -85,25 +96,53 @@
     outline: 2px solid #e5e5e5;
     cursor: pointer;
 }
-.bottom button:nth-child(2){
+
+.bottom button.loaddd {
+    padding: 22px 15px;
+}
+.bottom button.loaddd::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0.8em;
+    height: 0.8em;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #fff;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+.bottom button:nth-child(2) {
     background-color: #58cc02;
     color: white;
     box-shadow: 0 4px 0 0 #58a700;
     outline: none;
 }
-.bottom button:nth-child(2):disabled{
+
+.bottom button:nth-child(2):disabled {
     background-color: #e5e5e5;
     box-shadow: none;
 }
-.test{
+
+.test {
     padding: 10px;
     width: 100%;
 }
-.test .wrapper{
+
+.test .wrapper {
     width: 100%;
     display: flex;
     align-items: center;
 }
+
 .question {
     position: relative;
     background-color: white;
@@ -128,18 +167,22 @@
     height: 0;
     border-top: 10px solid transparent;
     border-bottom: 10px solid transparent;
-    border-right: 10px solid #e5e5e5; /* Change the color to match your design */
+    border-right: 10px solid #e5e5e5;
+    /* Change the color to match your design */
 }
-.test .wrapper .question i{
+
+.test .wrapper .question i {
     color: #1cb0f6;
     font-size: 20px;
     cursor: pointer;
 }
-.test .wrapper .question span{
+
+.test .wrapper .question span {
     color: #4b4b4b;
     font-size: 23px;
 }
-.options{
+
+.options {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -147,7 +190,8 @@
     margin-bottom: 30px;
     gap: 20px;
 }
-.options p{
+
+.options p {
     padding: 15px 10px;
     font-weight: bolder;
     border-radius: 15px;
@@ -162,16 +206,18 @@
     outline: 2px solid #afafaf;
     cursor: pointer;
 }
-.options p.active{
+
+.options p.active {
     box-shadow: 0px 4px 0px 2px #58a700;
     background-color: #58cc02;
     color: white;
     outline: 2px solid #58cc02;
 }
-.result.correct{
+
+.result.correct {
     padding: 40px 60px 38px;
     display: flex;
-    align-items: center;
+    align-items: start;
     justify-content: space-between;
     width: 100%;
     position: absolute;
@@ -180,10 +226,11 @@
     background-color: #d7ffb8;
     display: none;
 }
-.result.wrong{
+
+.result.wrong {
     padding: 40px 60px 38px;
     display: flex;
-    align-items: center;
+    align-items: start;
     justify-content: space-between;
     width: 100%;
     position: absolute;
@@ -192,11 +239,13 @@
     background-color: #ffdfe0;
     display: none;
 }
-.result .first{
+
+.result .first {
     display: flex;
     gap: 15px;
 }
-.result .first i.fa-check{
+
+.result .first i.fa-check {
     width: 70px;
     height: 70px;
     display: flex;
@@ -208,7 +257,8 @@
     font-size: 40px;
     font-weight: bolder;
 }
-.result .first i.fa-close{
+
+.result .first i.fa-close {
     width: 70px;
     height: 70px;
     display: flex;
@@ -220,8 +270,10 @@
     font-size: 40px;
     font-weight: bolder;
 }
-.result.correct button{
+
+.result.correct button {
     padding: 15px;
+    margin-top: 5px;
     font-weight: bolder;
     border-radius: 15px;
     border: none;
@@ -233,8 +285,10 @@
     box-shadow: 0 4px 0 0 #58a700;
     outline: none;
 }
-.result.wrong button{
+
+.result.wrong button {
     padding: 15px;
+    margin-top: 5px;
     font-weight: bolder;
     border-radius: 15px;
     border: none;
@@ -246,37 +300,42 @@
     box-shadow: 0 4px 0 0 #ea2b2b;
     outline: none;
 }
-.result.correct span{
+
+.result.correct span {
     color: #58a700;
     font-weight: bolder;
     font-size: 22px;
 }
-.result.wrong span{
+
+.result.wrong span {
     color: #ea2b2b;
     font-weight: bolder;
     font-size: 22px;
 }
-.result.correct span:nth-child(2){
+
+.result.correct span:nth-child(2) {
     color: #58a700;
     font-weight: normal;
     font-size: 18px;
     margin: 3px 0 10px;
 }
-.result.wrong span:nth-child(2){
+
+.result.wrong span:nth-child(2) {
     color: #ea2b2b;
     font-weight: normal;
     font-size: 18px;
     margin: 3px 0 10px;
 }
 
-.result.correct .first b{
+.result.correct .first b {
     display: flex;
     align-items: center;
     justify-content: start;
     gap: 7px;
     color: #7ec137;
 }
-.result.wrong .first b{
+
+.result.wrong .first b {
     display: flex;
     align-items: center;
     justify-content: start;
@@ -284,21 +343,29 @@
     color: #f06161;
 }
 
-.result .first b i{
+.result .first b i {
     transform: scaleX(-1);
 }
-.result .res{
+
+.result .res {
     display: flex;
     flex-direction: column;
 }
 
 @keyframes pop {
-    0% { transform: scale(1);}
-    50% { transform: scale(1.2);}
-    100% { transform: scale(1); }
-  }
-  
-  .pop {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.pop {
     animation: pop 0.3s;
-  }
-  
+}
