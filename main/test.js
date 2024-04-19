@@ -81,6 +81,7 @@ function check() {
         document.getElementById("ans").innerHTML = document.getElementById("ans").innerHTML = questionsAnswers[q]["option" + questionsAnswers[q].correctOpt];
         document.getElementById("ans").previousElementSibling.innerHTML = "Nicely Done. Meaning:"
         addPopEffect("status");
+        new Audio('../assets/Sound/Voicy_Correct answer sound effect .mp3').play()
     } else {
         document.getElementById("res").className = "result wrong"
         document.getElementById("status").className = "fa fa-close"
