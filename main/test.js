@@ -88,6 +88,7 @@ function check() {
         document.getElementById("ans").previousElementSibling.innerHTML = "Wrong Answer. Correct Solution:"
         document.getElementById("ans").innerHTML = document.getElementById("ans").innerHTML = questionsAnswers[q]["option" + questionsAnswers[q].correctOpt] + " " + "( Option" + questionsAnswers[q].correctOpt + " )";
         addPopEffect("status");
+        new Audio('../assets/Sound/Voicy_Bad answer.mp3').play()
     }
 }
 function increaseQ() {
