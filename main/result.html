@@ -14,9 +14,22 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <audio id="audio" src="../assets/Sound/Voicy_Level complete .mp3"></audio>
-    <button onclick="playAudio()" id="myButton">Play Audio</button>
-    <script>
+    <div style="display: none;">
+        <audio id="audio" src="../assets/Sound/Voicy_Level complete .mp3"></audio>
+        <button onclick="playAudio()" id="myButton" hidden>Play Audio</button>
+    </div>
+    <div class="wrapper">
+        <div class="left">
+            <img src="../assets/Screenshot_2024-04-21_032414-removebg-preview (1).png">
+            <h1>Listening star!</h1>
+            <p>You completed 5 listening challenges in this lesson</p>
+        </div>
+        <div class="right">
+            <img src="" alt="">
+            <a>REMOVE ADS</a>
+        </div>
+    </div>
+    <!-- <script>
         function playAudio() {
             var audio = document.getElementById("audio");
             audio.play();
@@ -27,6 +40,6 @@
                 button.click();
             },1500)
         });
-    </script>
+    </script> -->
 </body>
 </html>
