@@ -43,7 +43,6 @@ var option = document.getElementsByTagName("p")
 const loader = document.querySelector('.top .loader');
 
 function setQ() {
-    try {
         loader.style.setProperty('--width', `${q / 5 * 100}%`);
         const afterWidth = parseFloat(getComputedStyle(loader).getPropertyValue('--width'));
         loader.style.setProperty('--before-width', `${afterWidth - 1}%`);
@@ -61,15 +60,6 @@ function setQ() {
                     option[i].innerHTML = data.responseData.translatedText
                 });
         }
-    }
-    catch (error) {
-        document.getElementById("checkBtn").disabled = false
-        document.getElementById("checkBtn").innerHTML = ""
-        document.getElementById("checkBtn").classList.add("loaddd")
-        setTimeout(() => {
-            window.location.replace("./result.html")
-        }, 1500);
-    }
 }
 
 
@@ -104,7 +94,18 @@ function check() {
 }
 function increaseQ() {
     q++
-    setQ()
+    if(q >= questionsAnswers.length){
+        document.getElementById("increaseQ").innerHTML = ""
+        loader.style.setProperty('--width', `${q / 5 * 100}%`);
+        const afterWidth = parseFloat(getComputedStyle(loader).getPropertyValue('--width'));
+        loader.style.setProperty('--before-width', `${afterWidth - 1}%`);
+        document.getElementById("increaseQ").classList.add("loaddd")
+        setTimeout(() => {
+            window.location.replace("./result.html")
+        }, 1500);
+    }else{
+        setQ()
+    }
 }
 document.getElementById("increaseQ").addEventListener("click", increaseQ)
 document.getElementById("checkBtn").addEventListener("click", check)
