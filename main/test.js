@@ -102,7 +102,7 @@ function increaseQ() {
         document.getElementById("increaseQ").classList.add("loaddd")
         setTimeout(() => {
             window.location.replace("./result.html")
-        }, 1500);
+        }, 3500);
     }else{
         setQ()
     }
