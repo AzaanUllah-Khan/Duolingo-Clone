@@ -100,6 +100,7 @@ function increaseQ() {
         const afterWidth = parseFloat(getComputedStyle(loader).getPropertyValue('--width'));
         loader.style.setProperty('--before-width', `${afterWidth - 1}%`);
         document.getElementById("increaseQ").classList.add("loaddd")
+        document.getElementById("increaseQ").disabled = true
         setTimeout(() => {
             window.location.replace("./result.html")
         }, 3500);

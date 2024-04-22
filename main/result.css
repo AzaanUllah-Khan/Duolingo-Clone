@@ -1,17 +1,20 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Varela Round", sans-serif;
 }
-.wrapper{
+
+.wrapper {
     width: 100%;
     display: flex;
 }
-.wrapper div{
+
+.wrapper div {
     width: 50%;
 }
-.wrapper .left{
+
+.wrapper .left {
     width: 50%;
     border-right: 1px solid #e5e5e5;
     display: flex;
@@ -20,18 +23,20 @@
     justify-content: center;
     padding: 10px 20px 30px;
 }
-.wrapper .left h1{
+
+.wrapper .left h1 {
     color: #ffc800;
     font-size: 28px;
     margin-top: 10px;
     font-weight: bolder;
 }
-.wrapper .left p{
+.wrapper .left p {
     color: #b2b2b2;
     font-size: 18px;
     margin-top: 7px;
 }
-.wrapper .left .extra{
+
+.wrapper .left .extra {
     padding: 5px;
     width: 150px;
     height: 90px;
@@ -41,17 +46,20 @@
     background-color: #58cc02;
     margin-top: 20px;
 }
-.wrapper .left .extra:nth-child(2){
+
+.wrapper .left .extra:nth-child(2) {
     background-color: #ffc800;
 }
-.wrapper .left .extra h1{
+
+.wrapper .left .extra h1 {
     font-size: 14px;
     font-weight: bolder;
     color: white;
     margin: 0;
     text-align: center;
 }
-.wrapper .left .extra .in{
+
+.wrapper .left .extra .in {
     margin-top: 5px;
     flex-grow: 1;
     background-color: white;
@@ -64,10 +72,12 @@
     color: #58cc02;
     font-size: 12px;
 }
-.wrapper .left .extra:nth-child(2) .in{
+
+.wrapper .left .extra:nth-child(2) .in {
     color: #ffc800;
 }
-.wrapper .right{
+
+.wrapper .right {
     width: 50%;
     border-right: 1px solid #e5e5e5;
     display: flex;
@@ -76,17 +86,20 @@
     justify-content: center;
     padding: 10px 20px 30px;
 }
-.wrapper .right img{
+
+.wrapper .right img {
     border-radius: 15px;
     margin-bottom: 3px;
 }
-.wrapper .right a{
+
+.wrapper .right a {
     color: #1cb0f6;
     font-weight: bolder;
     font-size: 14px;
     margin-top: 35px;
     cursor: pointer;
 }
+
 .bottom {
     padding: 30px 60px 0;
     display: flex;
@@ -110,18 +123,21 @@
     outline: 2px solid #e5e5e5;
     cursor: pointer;
 }
+
 .bottom button:nth-child(2) {
     background-color: #58cc02;
     color: white;
     box-shadow: 0 4px 0 0 #58a700;
     outline: none;
 }
+
 .image-container {
     position: relative;
     display: block;
     width: 300px;
     height: 255px;
 }
+
 .wrapper div.skeleton-screen {
     position: absolute;
     top: 0;
@@ -132,16 +148,69 @@
     background-color: #f0f0f0;
     animation: pulse 1.5s infinite;
     z-index: 1;
-  }
-  @keyframes pulse {
+    overflow: hidden;
+}
+
+.wrapper div.skeleton-screen::after {
+    content: "";
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #ffffff6a;
+    transform: skew(-5deg);
+    z-index: 100;
+    animation: move .5s infinite ease-in-out;
+}
+
+@keyframes move {
     0% {
-      opacity: 0.6;
+        left: 0%;
+        opacity: 0.6;
     }
-    50% {
-      opacity: 0.8;
+    
+    25% {
+        left: 25%;
+        opacity: 0.8;
     }
+    75% {
+        left: 70%;
+        opacity: 0.8;
+    }
+    
     100% {
-      opacity: 0.6;
+        left: 100%;
+        opacity: 0.6;
     }
-  }
-  
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0.6;
+    }
+
+    50% {
+        opacity: 0.8;
+    }
+
+    100% {
+        opacity: 0.6;
+    }
+}
+@keyframes pop {
+    0% {
+        transform: scale(1);
+    }
+    
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+.pop {
+    animation: pop 0.3s;
+}

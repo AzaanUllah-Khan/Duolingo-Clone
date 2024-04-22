@@ -22,7 +22,7 @@
     </div>
     <div class="wrapper">
         <div class="left">
-            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 375 398"
+            <svg id="svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 375 398"
                 width="270" height="295" preserveAspectRatio="xMidYMid meet"
                 style="transform: translate3d(0px, 0px, 0px); content-visibility: visible;">
                 <defs>
@@ -2565,33 +2565,41 @@
                 <div class="skeleton-screen" id="skeleton-screen"></div>
                 <div class="icons" style="display: flex; align-items: center; gap: 5px; color: #00aecd;">
                     <i class="fa fa-close"></i>
-                    <i class="fa fa-info" style="border: 1px solid #00aecd; border-radius: 50%; width: 14px; height: 14px; display: flex; align-items: center; justify-content: center; font-size: 8px;"></i>
+                    <i class="fa fa-info"
+                        style="border: 1px solid #00aecd; border-radius: 50%; width: 14px; height: 14px; display: flex; align-items: center; justify-content: center; font-size: 8px;"></i>
                 </div>
-              </div>              
+            </div>
             <a>REMOVE ADS</a>
         </div>
     </div>
     <div class="bottom">
         <button onclick="window.location.replace('./test.html')">REVIEW TEST</button>
-        <button onclick="window.location.replace('/')">CONTINUE</button>
+        <button onclick="window.location.replace('../main/index.html')">CONTINUE</button>
     </div>
     <script>
         function playAudio() {
             var audio = document.getElementById("audio");
             audio.play();
         }
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function () {
             var button = document.getElementById("myButton");
-            setTimeout(()=>{
+            setTimeout(() => {
                 button.click();
-            },1500)
+                addPopEffect("svg");
+            }, 1500)
         });
         const image = document.getElementById('myDIV');
         const skeletonScreen = document.getElementById('skeleton-screen');
-        
+
         image.addEventListener('load', () => {
-          skeletonScreen.style.display = 'none';
+            skeletonScreen.style.display = 'none';
         });
+        function addPopEffect(element) {
+            document.getElementById(element).classList.add('pop');
+            setTimeout(() => {
+                document.getElementById(element).classList.remove('pop');
+            }, 300);
+        }
     </script>
 </body>
 
