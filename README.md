@@ -19,6 +19,9 @@
 
 This app is designed to help users learn new languages in an engaging and interactive way. Whether you're a beginner looking to learn basic words or a more advanced learner wanting to practice language conversion, this app has something for everyone. With tests to assess your proficiency and a user profile to track your progress, you can improve your language skills at your own pace.
 
+## Author
+Hello! I'm AzaanUllah Khan, the developer behind this language learning app. I'm passionate about helping people learn new languages and expand their horizons. With this app, I aim to provide a fun and interactive platform for language learning.
+
 ## Contributing
 
 Contributions are welcome! Please fork the repository and create a pull request with your changes.
