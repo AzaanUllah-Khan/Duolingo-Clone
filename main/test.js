@@ -41,6 +41,7 @@ var questionsAnswers = [
 ]
 var option = document.getElementsByTagName("p")
 const loader = document.querySelector('.top .loader');
+var c = 0
 
 function setQ() {
         loader.style.setProperty('--width', `${q / 5 * 100}%`);
@@ -77,11 +78,13 @@ function check() {
     document.getElementById("res").style.display = "flex"
     var btn = document.getElementsByClassName("active")[0]
     if (btn.id == questionsAnswers[q].correctOpt) {
+        c++
         document.getElementById("res").className = "result correct"
         document.getElementById("status").className = "fa fa-check"
         document.getElementById("ans").innerHTML = document.getElementById("ans").innerHTML = questionsAnswers[q]["option" + questionsAnswers[q].correctOpt];
         document.getElementById("ans").previousElementSibling.innerHTML = "Nicely Done. Meaning:"
         addPopEffect("status");
+        localStorage.setItem("correct",c)
         new Audio('../assets/Sound/Voicy_Correct answer sound effect .mp3').play()
     } else {
         document.getElementById("res").className = "result wrong"

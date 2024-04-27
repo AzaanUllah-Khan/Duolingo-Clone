@@ -2546,7 +2546,7 @@
                     <div class="in">
                         <img
                             src="https://d35aaqx5ub95lt.cloudfront.net/images/icons/9ace13520a375f5661415ff7d470f243.svg" />
-                        <h2>100%</h1>
+                        <h2 id="res">100%</h1>
                     </div>
                 </div>
                 <div class="extra">
@@ -2600,6 +2600,7 @@
                 document.getElementById(element).classList.remove('pop');
             }, 300);
         }
+        document.getElementById("res").innerHTML = localStorage.getItem("correct")/5*100+"%"
     </script>
 </body>
 
