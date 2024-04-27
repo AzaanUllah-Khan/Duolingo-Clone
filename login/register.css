@@ -1,27 +1,31 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Varela Round", sans-serif;
 }
-header{
+
+header {
     width: 100%;
     padding: 25px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-nav{
+
+nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
 }
-nav i{
+
+nav i {
     font-size: 24px;
     color: #afafaf;
 }
-nav button{
+
+nav button {
     padding: 14px;
     border-radius: 15px;
     border: 3px solid #ebebeb;
@@ -31,12 +35,14 @@ nav button{
     font-weight: bolder;
     font-size: 14px;
 }
-h1.heading{
+
+h1.heading {
     text-align: center;
     font-size: 26px;
     font-weight: bolder;
 }
-div.form{
+
+div.form {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -44,7 +50,8 @@ div.form{
     width: 390px;
     margin: 30px auto 0;
 }
-.form input{
+
+.form input {
     background-color: #f7f7f7;
     outline: none;
     border: 2px solid #e7e7e7;
@@ -54,18 +61,22 @@ div.form{
     width: 100%;
     margin-bottom: 20px;
 }
-.form input:nth-child(1){
+
+div.form input:nth-child(1) {
     margin-bottom: 7px;
 }
-.form small{
+
+.form small {
     font-size: 14px;
     color: #777777;
     margin-bottom: 20px;
 }
-.form small b{
+
+.form small b {
     color: #1cb0f6;
 }
-.form button{
+
+.form button {
     width: 100%;
     padding: 15px 12px;
     background-color: #1cb0f6;
@@ -78,15 +89,36 @@ div.form{
     box-shadow: 0px 4px 0px 0px #1899d6;
     cursor: pointer;
 }
-.form p.f{
+
+.form p.f {
     margin-top: 40px;
 }
-.form p{
+
+.form p {
     text-align: center;
     font-size: 14px;
     color: #afafaf;
     margin-top: 15px;
 }
-.form p b{
+
+.form p b {
     color: #afafaf;
+}
+
+@media screen and (max-width: 450px) {
+    div.form {
+        width: 90%;
+    }
+
+    .form input {
+        margin-bottom: 27px;
+    }
+
+    .form small {
+        margin-bottom: 27px;
+    }
+
+    h1.heading {
+        margin-top: 20px;
+    }
 }
