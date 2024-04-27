@@ -38,7 +38,7 @@ h1.hero-heading{
     flex-wrap: wrap;
 }
 .langs .langBox{
-    width: 200px;
+    width: 250px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -62,4 +62,19 @@ h1.hero-heading{
 .langs .langBox p{
     font-size: 17px;
     color: rgb(119, 119, 119);
+}
+
+@media screen and (max-width: 550px) {
+    nav h1 {
+        display: none;
+    }
+    
+    nav {
+        justify-content: center;
+    }
+}
+@media screen and (max-width: 270px) {
+    .langs .langBox{
+        width: 95%;
+    }
 }
