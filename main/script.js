@@ -1,4 +1,6 @@
 function switchActive(id) {
+    document.getElementById('main').style.zIndex = '1'
+    document.getElementById('aside').style.zIndex = '0'
     document.getElementById("main")?.classList.add("animate")
     var currentActive = document.getElementsByClassName("active")
     currentActive[0]?.classList.remove("active")

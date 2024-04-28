@@ -18,6 +18,7 @@ aside{
     gap: 30px;
     border-right: 2px solid #e5e5e5;
     height: 100vh;
+    overflow-y: scroll;
 }
 aside .blocks{
     width: 100%;
@@ -143,6 +144,7 @@ main .main{
     height: 100vh;
     position: relative;
     background-color: white;
+    overflow: auto;
 }
 main iframe{
     height: 100%;
@@ -173,13 +175,12 @@ main iframe{
             opacity: 0.6;
     }
 }
-@media screen and (max-width:780px){
+@media screen and (max-width:800px){
     aside{
         position: absolute;
         width: 100%;
         top: 0;
         left: 0;
-        /* z-index: 1; */
         background-color: white;
         border: none;
         outline: none;
@@ -189,20 +190,20 @@ main iframe{
         width: 100%;
         top: 0;
         left: 0;
+        height: 100vh;
         z-index: 1;
         background-color: white;
         border: none;
         outline: none;
+    }
+    main iframe{
+        height: 100vh;
+        overflow: scroll;
     }
     main header nav i.fa{
         display: block;
     }
     main header nav{
         justify-content: space-between;
-    }
-}
-@media screen and (max-height: 600px) {
-    body{
-        overflow: scroll;
     }
 }

@@ -12,7 +12,7 @@
         <link rel="icon" href="https://d35aaqx5ub95lt.cloudfront.net/favicon.ico">
     </head>
 <body>
-    <aside>
+    <aside id="aside">
         <img src="https://d35aaqx5ub95lt.cloudfront.net/vendor/70a4be81077a8037698067f583816ff9.svg" alt="">
         <div class="blocks">
             <div class="block" id="days" onclick="switchActive('days')">
@@ -61,10 +61,10 @@
             </div>
         </div>
     </aside>
-    <main>
+    <main id="main">
         <header>
             <nav>
-                <i class="fa fa-close"></i>
+                <i class="fa fa-close" onclick="document.getElementById('aside').style.zIndex = '1';document.getElementById('main').style.zIndex = '0'"></i>
                 <svg id="svg" viewBox="" data-test="flag-es"><image height="3168" href="https://d35aaqx5ub95lt.cloudfront.net/vendor/87938207afff1598611ba626a8c4827c.svg" width="82" xlink:href="https://d35aaqx5ub95lt.cloudfront.net/vendor/87938207afff1598611ba626a8c4827c.svg"></image></svg>
             </nav>
         </header>
