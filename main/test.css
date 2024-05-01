@@ -73,7 +73,7 @@
 }
 
 .bottom {
-    padding: 40px 60px 0;
+    padding: 40px 60px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -145,7 +145,6 @@
     border-top: 10px solid transparent;
     border-bottom: 10px solid transparent;
     border-right: 10px solid #e5e5e5;
-    /* Change the color to match your design */
 }
 
 .test .wrapper .question i {
@@ -162,10 +161,11 @@
 .options {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     padding: 20px 50px;
     margin-bottom: 30px;
     gap: 20px;
+    flex-wrap: wrap;
 }
 
 .options p {
@@ -184,6 +184,7 @@
     cursor: pointer;
 }
 
+
 .options p.active {
     box-shadow: 0px 4px 0px 2px #58a700;
     background-color: #58cc02;
@@ -197,7 +198,7 @@
     align-items: start;
     justify-content: space-between;
     width: 100%;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     left: 0;
     background-color: #d7ffb8;
@@ -210,7 +211,7 @@
     align-items: start;
     justify-content: space-between;
     width: 100%;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     left: 0;
     background-color: #ffdfe0;
@@ -367,5 +368,66 @@
 @keyframes spin {
     to {
         transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+@media screen and (max-width: 900px) {
+    .middle{
+        padding: 10px 100px;
+    }
+    .options{
+        padding: 20px 0;
+    }
+}
+@media screen and (max-width: 650px) {
+    .options p{
+        flex: 1 1 100%;
+    }
+    .result{
+        flex-direction: column !important;
+        gap: 10px;
+    }
+    .result button{
+        align-self: flex-end;
+    }
+}
+@media screen and (max-width: 550px) {
+    .middle svg{
+        display: none;
+    }
+    .question {
+        margin: 30px 0 10px
+    }
+    .top,.bottom{
+        padding: 20px 20px 10px;
+    }
+    .middle{
+        padding: 10px 60px;
+    }
+    .middle .test{
+        margin-top: 10px;
+    }
+    .result{
+        padding: 20px !important;
+    }
+    .result span{
+        font-size: 20px !important;
+    }
+    .result span:nth-child(2){
+        font-size: 16px !important;
+    }
+}
+@media screen and (max-width: 380px) {
+    .middle{
+        padding: 10px 20px;
+    }
+    .bottom{
+        flex-direction: column;
+        gap: 20px;
+    }
+    .bottom button{
+        width: 100%;
+    }
+    .result .first{
+        flex-direction: column !important;
     }
 }
