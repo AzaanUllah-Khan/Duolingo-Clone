@@ -125,3 +125,12 @@ body{
     line-height: 22px;
     font-weight: normal;
 }
+@media screen and (max-width: 950px) {
+    body{
+        flex-direction: column;
+        gap: 50px;
+    }
+    .wrapper,.followings-er{
+        width: 100%;
+    }
+}
