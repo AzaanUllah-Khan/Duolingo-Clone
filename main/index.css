@@ -163,7 +163,7 @@ main iframe{
     top: 0;
     left: 0;
 }
-.main .loader.animate{
+.main #main.animate{
     animation: load 1s linear;
 }
 @keyframes load {

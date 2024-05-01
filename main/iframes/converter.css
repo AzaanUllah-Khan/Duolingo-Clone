@@ -152,3 +152,31 @@ li,
     outline: 2px solid #58cc02;
     font-size: 16px
 }
+@media (max-width: 750px){
+    .container{
+      padding: 20px;
+    }
+    .wrapper .text-input{
+      flex-direction: column;
+    }
+    .text-input .to-text{
+      border-left: 0px;
+      border-top: 1px solid #ccc;
+    }
+    .text-input textarea{
+      height: 200px;
+    }
+    .controls .row .icons{
+      display: none;
+    }
+    .container button{
+      padding: 13px;
+      font-size: 16px;
+    }
+    .controls .row select{
+      font-size: 16px;
+    }
+    .controls .exchange{
+      font-size: 14px;
+    }
+  }
