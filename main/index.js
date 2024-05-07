@@ -1,7 +1,9 @@
+// initialize
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
 import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-auth.js";
 import { getStorage, ref,getDownloadURL } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-storage.js";
 
+// config
 const firebaseConfig = {
     apiKey: "AIzaSyCIrlFqcZrbpluUnBZ1bL6_8SsiwBmISi4",
     authDomain: "doulingo-clone.firebaseapp.com",
@@ -12,10 +14,12 @@ const firebaseConfig = {
     measurementId: "G-WC71VL2GVL"
 };
 
+/variables
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const storage = getStorage();
 
+// onAuthStateChanged
 onAuthStateChanged(auth, (user) => {
     if (user) {
         getDownloadURL(ref(storage, user.email))
@@ -27,11 +31,15 @@ onAuthStateChanged(auth, (user) => {
     }
 });
 var y = localStorage.getItem("imgY")
+
+// signout
 document.getElementById("signout").addEventListener("click",()=>{
     signOut(auth).then(() => {
       }).catch((error) => {
       });
 })
+
+// setting up x, y, width and height values
 document.getElementById("svg").viewBox.baseVal.x = "0"
 document.getElementById("svg").viewBox.baseVal.y = y
 document.getElementById("svg").viewBox.baseVal.width = "82"
